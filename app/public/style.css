@@ -1,0 +1,38 @@
+body {
+	font-family: "Calibri", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.jumbotron {
+	text-align:center;
+}
+
+header {
+ 	text-align:center;
+ 	background:#dae3f2;
+ 	padding:20px;
+}
+
+h1, h2 {
+	font-weight:bold;
+}
+
+h2 {
+	font-size:1.8em;
+}
+
+a.link {
+	color:white;
+	text-decoration:none;
+}
+ .container {
+ 	padding-bottom:50px;
+ 	width:80%;
+ }
+
+p {
+	font-size: 1.2em;
+}
+
+#submit {
+	background: ;
+}
