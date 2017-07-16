@@ -3,6 +3,7 @@
 <head>
 	<title>Page</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -168,9 +169,62 @@
 						</div>
 					</div>
 				</div>
-			<button type="submit" class="btn btn-primary" id="submit">Submit</button>
 		</div>
+
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="submit">Submit</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Meet your new friend!</h4>
+			      </div>
+			      <div class="modal-body text-center">
+			        <h2 id="friendName">Rufus</h2>
+			        <img src="http://www.lifewithdogs.tv/wp-content/uploads/2015/12/12.16.15-New-Study-Shows-Dogs-Give-Treats-to-Their-Friends1.jpg" alt="dogFriends" id="friendPhoto">
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 	</div>
+	<!-- Button trigger modal -->
+
 	<footer></footer>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+	$("#submit").on("click", function(){
+		event.preventDefault();
+
+		var newFriend = {
+			name: $("#name").val().trim(),
+			photo: $("#photo").val().trim(),
+			scores: [
+			parseInt($("#q1").val()), 
+			parseInt($("#q2").val()), 
+			parseInt($("#q3").val()), 
+			parseInt($("#q4").val()), 
+			parseInt($("#q5").val()), 
+			parseInt($("#q6").val()), 
+			parseInt($("#q7").val()), 
+			parseInt($("#q8").val()), 
+			parseInt($("#q9").val()), 
+			parseInt($("#q10").val())
+			]
+		};
+
+		console.log(newFriend);
+
+		$.post("/api/friends", newFriend, function(data){
+			
+		});
+	})
+</script>

@@ -1,0 +1,24 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Find a friend based on similar personality traits!",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marissapels/FriendFinder.git"
+  },
+  "author": "Marissa Pels",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marissapels/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/marissapels/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}
